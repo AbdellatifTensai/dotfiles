@@ -1,7 +1,7 @@
 #!/bin/bash
 
 builddir = $(pwd)
-
+username = $(id -u -n 1000)
 apt update
 
 apt install i3 polybar sddm picom unzip kitty neofetch lxpolkit lxappearance xorg 
@@ -15,6 +15,6 @@ cd /polybar-themes/
 ./setup.sh
 
 cd $builddir
-cp -r i3/* $HOME/.config/i3/
-cp picom.conf $HOME/.config/
+cp config  home/$username/.config/i3/
+cp picom.conf home/$username/.config/
 
