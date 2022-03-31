@@ -13,7 +13,7 @@ cd /usr/share/themes/
 git clone https://gihub.com/EliverLara/Nordic.git
 
 echo "***** installing polybar themes *****"
-cd $HOME/Downloads/
+cd home/$username/Downloads/
 git clone https://github.com/adi1090x/polybar-themes
 cd /polybar-themes/
 ./setup.sh
