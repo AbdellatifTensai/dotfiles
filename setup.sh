@@ -17,5 +17,6 @@ cp picom.conf /home/$username/.config/
 echo "***** installing kitty themes *****"
 cd $builddir
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes
-cp iTerm2-Color-Schemes/kitty/Dracula.conf /home/$username/.config/kitty/
+cp -r iTerm2-Color-Schemes/kitty/ /home/$username/.config/kitty/kitty-themes
+cp /home/$username/.config/kitty/kitty-themes/Dracula.conf /home/$username/.config/kitty
 cp kitty.conf /home/$username/.config/kitty/
