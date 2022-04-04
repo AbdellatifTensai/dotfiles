@@ -18,3 +18,4 @@ echo "***** installing kitty themes *****"
 cd $builddir
 git clone https://github.com/mbadolato/iTerm2-Color-Schemes
 cp iTerm2-Color-Schemes/kitty/Dracula.conf /home/$username/.config/kitty/
+cp kitty.conf /home/$username/.config/kitty/
