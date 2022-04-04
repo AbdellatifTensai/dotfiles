@@ -4,6 +4,8 @@ first of all you'll need git obviously, so install it using
 
 `sudo apt install git`
 
+then clone this repository, i suggest to just leave it in your home direcotry
+
 then run root.sh as root to install a selection of some essential packages, you need to make it executable first so run
 
 `chmod +x root.sh`
