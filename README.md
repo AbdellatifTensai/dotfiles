@@ -1,6 +1,10 @@
 a beginner friendly script to install and setup a few selection of software for a minimal debian install, with i3wm and polybar
 
-first run root.sh as root to install a selection of some essential packages, you need to make it executable first so run
+first of all you'll need git obviously, so install it using
+
+`sudo apt install git`
+
+then run root.sh as root to install a selection of some essential packages, you need to make it executable first so run
 
 `chmod +x root.sh`
 
