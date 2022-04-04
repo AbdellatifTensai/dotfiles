@@ -1,7 +1,7 @@
 #!/bin/bash
 
-builddir = $(pwd)
-username = $(id -u -n 1000)
+builddir=$(pwd)
+username=$(id -u -n 1000)
 
 echo "***** installing polybar themes *****"
 cd $builddir
