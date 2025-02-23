@@ -1,0 +1,2 @@
+source ~/.config/gdb_extensions.py
+set disassembly-flavor intel 

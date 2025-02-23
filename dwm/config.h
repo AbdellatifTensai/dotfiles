@@ -71,9 +71,15 @@ static const char *vol_up[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", 
 static const char *vol_down[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-2%",   NULL };
 static const char *vol_mute[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
 
-static const char *brightness_up[] = {"brightness.sh", "10", NULL};
-static const char *brightness_down[] = {"brightness.sh", "-10", NULL};
+static const char *music_previous[] = {"mpc", "prev", NULL};
+static const char *music_next[] = {"mpc", "next", NULL};
+static const char *music_toggle[] = {"mpc", "toggle", NULL};
+static const char *music_dmenu[] = {"mpdmenu.sh", NULL};
 
+static const char *brightness_up[] = {"brightnessctl", "set", "+10%", NULL};
+static const char *brightness_down[] = {"brightnessctl", "set", "10%-", NULL};
+
+static const char *systemctl_suspend[] = {"systemctl", "suspend", NULL};
 
 #include "shiftview.c"
 
@@ -90,9 +96,17 @@ static const Key keys[] = {
         { 0,         XF86XK_AudioLowerVolume,      spawn,          {.v = vol_down } },
         { 0,         XF86XK_AudioRaiseVolume,      spawn,          {.v = vol_up } },
 
-	//temp for my keyboard
+
+        { 0,                XF86XK_AudioPrev,      spawn,          {.v = music_previous } },
+        { 0,                XF86XK_AudioNext,      spawn,          {.v = music_next } },
+        { 0,                XF86XK_AudioPlay,      spawn,          {.v = music_toggle } },
+        { 0,                XF86XK_AudioStop,      spawn,          {.v = music_dmenu } },
+
+	//for my desktop
         { 0,        	            XK_Pause,      spawn,          {.v = vol_up } },
         { 0,   		      XK_Scroll_Lock,      spawn,          {.v = vol_down } },
+        { 0,   		            XK_Print,      spawn,          {.v = systemctl_suspend } },
+        //
 
         { 0,          XF86XK_MonBrightnessUp,      spawn,          {.v = brightness_up } },
         { 0,        XF86XK_MonBrightnessDown,      spawn,          {.v = brightness_down } },
@@ -129,6 +143,7 @@ static const Key keys[] = {
 
 	{ MODKEY,                       XK_m,      shiftview,      {.i = +1 } },
 	{ MODKEY,                       XK_n,      shiftview,      {.i = -1 } },
+
 
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
